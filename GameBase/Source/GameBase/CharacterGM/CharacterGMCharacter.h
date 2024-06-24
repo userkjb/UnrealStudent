@@ -26,4 +26,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private :
+
+	UFUNCTION(BlueprintCallable)
+	void ChangeSlotMesh(EPlayerItemSlot _Slot, UStaticMesh* _Mesh);
+
+
+	UPROPERTY(Category = "Contents", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	TArray<UStaticMeshComponent*> ItemMeshs;
 };
