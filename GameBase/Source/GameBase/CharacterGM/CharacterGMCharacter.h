@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Global/GlobalAnimInstance.h"
+//#include "Global/GameEnum.h"
+//#include "Net/UnrealNetwork.h"
 #include "CharacterGMCharacter.generated.h"
 
 UCLASS()
@@ -26,7 +29,13 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+
+	UFUNCTION(Reliable, Server)
+	void ChangeAnimation(EPlayerDir _Type);
+	void ChangeAnimation_Implementation(EPlayerDir _Type);
+
 private :
+	UGlobalAnimInstance* AnimationContext;
 
 	UFUNCTION(BlueprintCallable)
 	void ChangeSlotMesh(EPlayerItemSlot _Slot, UStaticMesh* _Mesh);
@@ -34,4 +43,8 @@ private :
 
 	UPROPERTY(Category = "Contents", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	TArray<UStaticMeshComponent*> ItemMeshs;
+
+	//UPROPERTY(Category = "Contents", Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(Category = "Contents", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	EPlayerDir AniValue;
 };

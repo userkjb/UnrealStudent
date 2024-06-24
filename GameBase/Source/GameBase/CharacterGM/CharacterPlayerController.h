@@ -39,5 +39,6 @@ public :
 	bool IsRun = false;
 
 private:
-
+	UFUNCTION(BlueprintCallable)
+	void ChangeAnimation(EPlayerDir _Animation);
 };

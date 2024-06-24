@@ -28,6 +28,8 @@ void ACharacterGMCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
+	AnimationContext = Cast<UGlobalAnimInstance>(GetMesh()->GetAnimInstance());
+
 	USpringArmComponent* SpringArm = GetComponentByClass<USpringArmComponent>();
 	SpringArm->bUsePawnControlRotation = true;
 }
@@ -44,6 +46,11 @@ void ACharacterGMCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void ACharacterGMCharacter::ChangeAnimation_Implementation(EPlayerDir _Type)
+{
+	AniValue = _Type;
 }
 
 void ACharacterGMCharacter::ChangeSlotMesh(EPlayerItemSlot _Slot, UStaticMesh* _Mesh)

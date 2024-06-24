@@ -3,6 +3,7 @@
 
 #include "CharacterGM/CharacterPlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "CharacterGMCharacter.h"
 #include "EnhancedInputSubsystems.h"
 
 void ACharacterPlayerController::SetupInputComponent()
@@ -71,4 +72,10 @@ void ACharacterPlayerController::PlayerYawRotation(FVector2D _RotDir)
 	float TestRotSpeed = 100.0f;
 
 	GetPawn()->AddControllerYawInput(x * DeltaTime * TestRotSpeed);
+}
+
+void ACharacterPlayerController::ChangeAnimation(EPlayerDir _Animation)
+{
+	ACharacterGMCharacter* Ch = GetPawn<ACharacterGMCharacter>();
+	Ch->ChangeAnimation(_Animation);
 }
