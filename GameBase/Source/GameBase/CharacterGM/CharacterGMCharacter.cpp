@@ -3,6 +3,8 @@
 
 #include "CharacterGM/CharacterGMCharacter.h"
 #include "Global/GameEnum.h"
+#include "Net/UnrealNetwork.h"
+#include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -21,6 +23,9 @@ ACharacterGMCharacter::ACharacterGMCharacter()
 
 		ItemMeshs.Push(NewSlotMesh);
 	}
+
+	bUseControllerRotationYaw = true;
+	GetCharacterMovement()->bOrientRotationToMovement = true;
 }
 
 // Called when the game starts or when spawned
@@ -51,6 +56,13 @@ void ACharacterGMCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 void ACharacterGMCharacter::ChangeAnimation_Implementation(EPlayerDir _Type)
 {
 	AniValue = _Type;
+}
+
+void ACharacterGMCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(ACharacterGMCharacter, AniValue);
 }
 
 void ACharacterGMCharacter::ChangeSlotMesh(EPlayerItemSlot _Slot, UStaticMesh* _Mesh)

@@ -21,7 +21,7 @@ public :
 	class UInputMappingContext* InputMapping;
 
 	UFUNCTION(BlueprintCallable)
-	void PlayerMoving(FVector _Dir, float _Speed);
+	void PlayerMoving(FVector _Dir);
 
 	UFUNCTION(BlueprintCallable)
 	void PlayerDashStart();

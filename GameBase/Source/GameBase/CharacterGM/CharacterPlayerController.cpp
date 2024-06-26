@@ -4,6 +4,7 @@
 #include "CharacterGM/CharacterPlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "CharacterGMCharacter.h"
+#include "Global/GameEnum.h"
 #include "EnhancedInputSubsystems.h"
 
 void ACharacterPlayerController::SetupInputComponent()
@@ -15,18 +16,37 @@ void ACharacterPlayerController::SetupInputComponent()
 	InputSystem->AddMappingContext(InputMapping, 0);
 }
 
-void ACharacterPlayerController::PlayerMoving(FVector _Dir, float _Speed)
+void ACharacterPlayerController::PlayerMoving(FVector _Dir)
 {
 	float DeltaTime = GetWorld()->GetDeltaSeconds();
+	float Speed = 100.0f;
 	if (false == IsRun)
 	{
-		FVector MoveVector = _Speed * DeltaTime * _Dir;
+		FVector MoveVector = Speed * DeltaTime * _Dir;
 		GetPawn()->AddActorLocalOffset(MoveVector);
 	}
 	else
 	{
-		FVector MoveVector = (_Speed * 2.0f) * DeltaTime * _Dir;
+		FVector MoveVector = (Speed * 2.0f) * DeltaTime * _Dir;
 		GetPawn()->AddActorLocalOffset(MoveVector);
+	}
+
+
+	if (0.0f < _Dir.X)
+	{
+		ChangeAnimation(EPlayerDir::Front);
+	}
+	else if (0.0f > _Dir.X)
+	{
+		ChangeAnimation(EPlayerDir::Back);
+	}
+	else if (0.0f < _Dir.Y)
+	{
+		ChangeAnimation(EPlayerDir::Right);
+	}
+	else if (0.0f > _Dir.Y)
+	{
+		ChangeAnimation(EPlayerDir::Left);
 	}
 }
 
