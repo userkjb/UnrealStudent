@@ -18,7 +18,8 @@ ACharacterGMCharacter::ACharacterGMCharacter()
 	{
 		FString Name = SlotEnum->GetNameStringByValue(i);
 
-		UStaticMeshComponent* NewSlotMesh = CreateDefaultSubobject<UStaticMeshComponent>(*Name);
+		//UStaticMeshComponent* NewSlotMesh = CreateDefaultSubobject<UStaticMeshComponent>(*Name);
+		UStaticMeshComponent* NewSlotMesh = CreateOptionalDefaultSubobject<UStaticMeshComponent>(*Name);
 		NewSlotMesh->SetupAttachment(GetMesh(), *Name);
 
 		ItemMeshs.Push(NewSlotMesh);

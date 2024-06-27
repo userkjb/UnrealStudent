@@ -48,6 +48,10 @@ void ACharacterPlayerController::PlayerMoving(FVector _Dir)
 	{
 		ChangeAnimation(EPlayerDir::Left);
 	}
+	else
+	{
+		ChangeAnimation(EPlayerDir::Max);
+	}
 }
 
 void ACharacterPlayerController::PlayerDashStart()

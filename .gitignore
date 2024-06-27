@@ -167,3 +167,7 @@ GameBase/!Build/Android/res/*/*.png
 # Ignore plugins binaries on deep subfolders
 GameBase/Plugins/**/Binaries/*
 GameBase/Plugins/**/Intermediate/*
+
+####
+GameBase/Content/UnityResources
+GameBase/Content/ParagonWraith

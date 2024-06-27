@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -18,10 +18,11 @@ enum class EAnimationState : uint8
 UENUM(BlueprintType)
 enum class EPlayerDir : uint8
 {
-	Left,
-	Right,
-	Front,
-	Back,
+	Left UMETA(DisplayName = "왼쪽"),
+	Right UMETA(DisplayName = "오른쪽"),
+	Front UMETA(DisplayName = "앞"),
+	Back UMETA(DisplayName = "뒤"),
+	Max UMETA(DisplayName = "X"),
 };
 
 UENUM(BlueprintType)
