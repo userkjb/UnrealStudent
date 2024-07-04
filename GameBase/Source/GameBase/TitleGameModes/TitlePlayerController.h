@@ -13,5 +13,22 @@ UCLASS()
 class GAMEBASE_API ATitlePlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
+
+public:
+	void SetupInputComponent() override;
+
+	UPROPERTY(EditAnywhere, Category = "Input")
+	class UInputMappingContext* InputMapping;
+
+	UFUNCTION(BlueprintCallable)
+	void PlayerMove(FVector _Dir, float _Speed);
+
+	UFUNCTION(BlueprintCallable)
+	void PlayerRunIn();
+
+	UFUNCTION(BlueprintCallable)
+	void PlayerRunOut();
+
+private:
+	bool IsRun = false;
 };

@@ -13,5 +13,13 @@ UCLASS()
 class GAMEBASE_API UGlobalAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+
+public:
+	template<typename EnumType>
+	void ChangeAnimation(EnumType Key)
+	{
+		ChangeAnimation(static_cast<uint8>(Key));
+	}
+
+	void ChangeAnimation(uint8 Key);	
 };

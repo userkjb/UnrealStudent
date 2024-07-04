@@ -3,3 +3,7 @@
 
 #include "Global/GlobalAnimInstance.h"
 
+void UGlobalAnimInstance::ChangeAnimation(uint8 Key)
+{
+
+}
