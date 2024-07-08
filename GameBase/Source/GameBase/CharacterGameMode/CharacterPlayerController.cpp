@@ -3,7 +3,18 @@
 
 #include "CharacterGameMode/CharacterPlayerController.h"
 #include "CharacterDefaultCharacter.h"
+#include "Kismet/KismetMathLibrary.h"
 #include "EnhancedInputSubsystems.h"
+
+ACharacterPlayerController::ACharacterPlayerController(const FObjectInitializer& ObjectInitializer)
+	:Super(ObjectInitializer)
+{
+}
+
+void ACharacterPlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+}
 
 void ACharacterPlayerController::SetupInputComponent()
 {
@@ -16,6 +27,8 @@ void ACharacterPlayerController::SetupInputComponent()
 
 void ACharacterPlayerController::PlayerMove(FVector _Dir, float _Speed)
 {
+	FRotator Rotator = GetControlRotation();
+	FVector Direction = UKismetMathLibrary::GetForwardVector(FRotator(0, Rotator.Yaw, 0));
 	GetPawn()->AddMovementInput(_Dir);
 
 	ACharacterDefaultCharacter* Ch = GetPawn<ACharacterDefaultCharacter>();
@@ -23,7 +36,7 @@ void ACharacterPlayerController::PlayerMove(FVector _Dir, float _Speed)
 
 void ACharacterPlayerController::PlayerRotation(FVector _Dir, float _RotSpeed)
 {
-	AddYawInput(_Dir.X);
+	//AddYawInput(_Dir.X);
 	AddPitchInput(_Dir.Y);
 }
 

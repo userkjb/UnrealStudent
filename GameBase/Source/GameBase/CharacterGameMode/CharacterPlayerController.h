@@ -15,8 +15,13 @@ class GAMEBASE_API ACharacterPlayerController : public APlayerController
 	GENERATED_BODY()
 
 public :
-	void SetupInputComponent() override;
-	
+	ACharacterPlayerController(const FObjectInitializer& ObjectInitializer);
+
+protected :
+	virtual void BeginPlay() override;
+	virtual void SetupInputComponent() override;
+
+public:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	class UInputMappingContext* InputMapping;
 
