@@ -25,11 +25,23 @@ void ACharacterPlayerController::SetupInputComponent()
 	InputSystem->AddMappingContext(InputMapping, 0);
 }
 
-void ACharacterPlayerController::PlayerMove(FVector _Dir, float _Speed)
+void ACharacterPlayerController::PlayerMove(const FInputActionValue& InputValue)
 {
-	FRotator Rotator = GetControlRotation();
-	FVector Direction = UKismetMathLibrary::GetForwardVector(FRotator(0, Rotator.Yaw, 0));
-	GetPawn()->AddMovementInput(_Dir);
+	FVector2D MovementVector = InputValue.Get<FVector2D>();
+
+	if (MovementVector.X != 0)
+	{
+		FRotator Rotator = GetControlRotation();
+		FVector Direction = UKismetMathLibrary::GetForwardVector(FRotator(0, Rotator.Yaw, 0));
+		GetPawn()->AddMovementInput(Direction, MovementVector.X);
+	}
+
+	if (MovementVector.Y != 0)
+	{
+		FRotator Rotator = GetControlRotation();
+		FVector Direction = UKismetMathLibrary::GetRightVector(FRotator(0, Rotator.Yaw, 0));
+		GetPawn()->AddMovementInput(Direction, MovementVector.Y);
+	}
 
 	ACharacterDefaultCharacter* Ch = GetPawn<ACharacterDefaultCharacter>();
 }

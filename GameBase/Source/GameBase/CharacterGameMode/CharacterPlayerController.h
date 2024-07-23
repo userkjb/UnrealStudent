@@ -26,7 +26,7 @@ public:
 	class UInputMappingContext* InputMapping;
 
 	UFUNCTION(BlueprintCallable)
-	void PlayerMove(FVector _Dir, float _Speed);
+	void PlayerMove(const FInputActionValue& InputValue);
 
 	UFUNCTION(BlueprintCallable)
 	void PlayerRotation(FVector _Dir, float _RotSpeed);
