@@ -8,11 +8,22 @@
 
 
 UENUM(BlueprintType)
-enum class EAnimationState : uint8
+enum class EUpAnimationState : uint8
 {
-	Idle,
-	Run,
-	Attack,
+	Idle UMETA(DisplayName = "기본"),
+	Mode UMETA(DisplayName = "걷기"),
+	Dash UMETA(DisplayName = "대쉬"),
+	Attack UMETA(DisplayName = "공격"),
+	Max UMETA(DisplayName = "Max"),
+};
+
+UENUM(BlueprintType)
+enum class EDownAnimationState : uint8
+{
+	Idle UMETA(DisplayName = "기본"),
+	Move UMETA(DisplayName = "걷기"),
+	Dash UMETA(DisplayName = "대쉬"),
+	Max UMETA(DisplayName = "Max"),
 };
 
 UENUM(BlueprintType)
@@ -22,7 +33,7 @@ enum class EPlayerDir : uint8
 	Right UMETA(DisplayName = "오른쪽"),
 	Front UMETA(DisplayName = "앞"),
 	Back UMETA(DisplayName = "뒤"),
-	Max UMETA(DisplayName = "X"),
+	Max UMETA(DisplayName = "Xax"),
 };
 
 UENUM(BlueprintType)
