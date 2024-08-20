@@ -3,15 +3,13 @@
 
 #include "CharacterDefaultCharacter.h"
 
-#include "GameFramework/SpringArmComponent.h"
-
 // Sets default values
 ACharacterDefaultCharacter::ACharacterDefaultCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	bUseControllerRotationPitch = true;
+	//bUseControllerRotationPitch = true;
 	bUseControllerRotationYaw = true;
 }
 
