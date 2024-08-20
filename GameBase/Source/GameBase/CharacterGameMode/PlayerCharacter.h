@@ -14,4 +14,22 @@ class GAMEBASE_API APlayerCharacter : public ACharacterDefaultCharacter
 {
 	GENERATED_BODY()
 	
+public :
+	// Sets default values for this character's properties
+	APlayerCharacter();
+
+protected :
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+	virtual void AnimationEnd(FString _CurMontage) override;
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
+public :
+	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(Reliable, Server)
+	void InitPlayerState();
+	void InitPlayerState_Implementation();
 };
