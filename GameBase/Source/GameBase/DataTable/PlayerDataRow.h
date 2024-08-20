@@ -48,7 +48,7 @@ private :
 	/// Player AP
 	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
-	int AbilityDamage = -1;
+	int AbilityPower = -1;
 
 	/// <summary>
 	/// Player 이동 속도
