@@ -26,6 +26,9 @@ protected :
 	UPROPERTY(Category = "Contents", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArmComponent = nullptr;
 
+	UPROPERTY(Category = "Contents", EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* CameraComponent = nullptr;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
