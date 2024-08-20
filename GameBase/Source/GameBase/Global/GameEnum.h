@@ -6,6 +6,15 @@
 #include "UObject/NoExportTypes.h"
 #include "GameEnum.generated.h"
 
+UENUM(BlueprintType)
+enum class EObjectType : uint8
+{
+	Player,
+	Monster,
+	Item,
+	Max,
+};
+
 /// <summary>
 /// Player 공격 타입
 /// </summary>
