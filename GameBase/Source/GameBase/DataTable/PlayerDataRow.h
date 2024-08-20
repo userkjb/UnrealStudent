@@ -17,14 +17,67 @@ struct FPlayerDataRow : public FTableRowBase
 	GENERATED_BODY()
 
 public :
+	FORCEINLINE FString GetPlayerName() const
+	{
+		return PlayerName;
+	}
 
+	FORCEINLINE int GetPlayerHP() const
+	{
+		return Hp;
+	}
+
+	FORCEINLINE int GetPlayerMP() const
+	{
+		return Mp;
+	}
+
+	FORCEINLINE int GetPlayerAttackDamage() const
+	{
+		return AttackDamage;
+	}
+
+	FORCEINLINE int GetPlayerAbilityPower() const
+	{
+		return AbilityPower;
+	}
+
+	FORCEINLINE int GetPlayerMoveSpeed() const
+	{
+		return MoveSpeed;
+	}
+
+	FORCEINLINE int GetPlayerAttackSpeed() const
+	{
+		return AttackSpeed;
+	}
+
+	FORCEINLINE TSubclassOf<class UAnimInstance> GetPlayerAnimInstance() const
+	{
+		return PlayerAnimInstance;
+	}
+
+	FORCEINLINE TMap<EPlayerUpAnimationState, class UAnimMontage*> GetPlayerUpAnimMontages() const
+	{
+		return AnimUpMontages;
+	}
+
+	FORCEINLINE TMap<EPlayerDownAnimationState, class UAnimMontage*> GetPlayerDownAnimMontages() const
+	{
+		return AnimDownMontages;
+	}
+
+	FORCEINLINE TMap<EPlayerUDAnimationState, class UAnimSequence*> GetPlayerUDAnimSequences() const
+	{
+		return AnimUDSequences;
+	}
 
 private :
 	/// <summary>
 	/// Player ¿Ã∏ß
 	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
-	FString PlayerName = "None";
+	FString PlayerName = TEXT("");
 
 	/// <summary>
 	/// Player HP
