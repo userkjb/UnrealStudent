@@ -3,6 +3,8 @@
 
 #include "CharacterDefaultCharacter.h"
 
+#include "GameFramework/SpringArmComponent.h"
+
 // Sets default values
 ACharacterDefaultCharacter::ACharacterDefaultCharacter()
 {
