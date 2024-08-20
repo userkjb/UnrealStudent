@@ -7,6 +7,16 @@
 #include "GameEnum.generated.h"
 
 /// <summary>
+/// Player 공격 타입
+/// </summary>
+UENUM(BlueprintType)
+enum class EPlayerAttackType : uint8
+{
+	AttackDamageType,
+	AbilityPowerType,
+};
+
+/// <summary>
 /// Player 상체 상태
 /// </summary>
 UENUM(BlueprintType)
