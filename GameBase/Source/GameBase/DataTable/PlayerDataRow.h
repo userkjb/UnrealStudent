@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/DataTable.h"
+#include "Global/GameEnum.h"
 #include "PlayerDataRow.generated.h"
 
 /**
@@ -16,24 +17,58 @@ struct FPlayerDataRow : public FTableRowBase
 	GENERATED_BODY()
 
 public :
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+
+
+private :
+	/// <summary>
+	/// Player 이름
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	FString PlayerName = "None";
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player HP
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int Hp = -1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player MP
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int Mp = -1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player AD
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int AttackDamage = -1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player AP
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int AbilityDamage = -1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player 이동 속도
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
+
 	int MoveSpeed = 1;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	/// <summary>
+	/// Player 공격 속도
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int AttackSpeed = 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
+	TSubclassOf<class UAnimInstance> PlayerAnimInstance;
+
+	/// <summary>
+	/// Player Up Montage
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
+	TMap<EUpAnimationState, class UAnimMontage*> AnimUpMontages = TMap<EUpAnimationState, class UAnimMontage*>();
 };
