@@ -46,10 +46,11 @@ void ACharacterPlayerController::PlayerMove(const FInputActionValue& InputValue)
 	ACharacterDefaultCharacter* Ch = GetPawn<ACharacterDefaultCharacter>();
 }
 
-void ACharacterPlayerController::PlayerRotation(FVector _Dir, float _RotSpeed)
+void ACharacterPlayerController::PlayerRotation(const FInputActionValue& InputValue)
 {
-	//AddYawInput(_Dir.X);
-	AddPitchInput(_Dir.Y);
+	FVector2D MouseXY = InputValue.Get<FVector2D>();
+	AddYawInput(MouseXY.X);
+	AddPitchInput(-MouseXY.Y);
 }
 
 void ACharacterPlayerController::PlayerRunIn()

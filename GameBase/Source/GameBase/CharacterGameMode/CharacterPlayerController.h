@@ -29,7 +29,7 @@ public:
 	void PlayerMove(const FInputActionValue& InputValue);
 
 	UFUNCTION(BlueprintCallable)
-	void PlayerRotation(FVector _Dir, float _RotSpeed);
+	void PlayerRotation(const FInputActionValue& InputValue);
 
 	UFUNCTION(BlueprintCallable)
 	void PlayerRunIn();
