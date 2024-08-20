@@ -50,7 +50,7 @@ void ACharacterPlayerController::PlayerRotation(const FInputActionValue& InputVa
 {
 	FVector2D MouseXY = InputValue.Get<FVector2D>();
 	AddYawInput(MouseXY.X);
-	AddPitchInput(-MouseXY.Y);
+	AddPitchInput(MouseXY.Y);
 }
 
 void ACharacterPlayerController::PlayerRunIn()
