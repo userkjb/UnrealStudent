@@ -7,3 +7,13 @@ void UGlobalAnimInstance::ChangeAnimation(uint8 Key)
 {
 
 }
+
+void UGlobalAnimInstance::PushAnimation(uint8 _Key, UAnimMontage* _Montage)
+{
+	if (true == AnimMontages.Contains(_Key))
+	{
+		return;
+	}
+
+	AnimMontages.Add(_Key, _Montage);
+}

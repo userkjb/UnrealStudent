@@ -21,5 +21,17 @@ public:
 		ChangeAnimation(static_cast<uint8>(Key));
 	}
 
-	void ChangeAnimation(uint8 Key);	
+	void ChangeAnimation(uint8 Key);
+
+	template<typename EnumType>
+	void PushAnimation(EnumType _Key, UAnimMontage* _Montage)
+	{
+		PushAnimation(static_cast<uint8>(_Key), _Montage)
+	}
+
+	void PushAnimation(uint8 _Key, UAnimMontage* _Montage);
+
+private :
+	UPROPERTY()
+	TMap<uint8, UAnimMontage*> AnimMontages;
 };
