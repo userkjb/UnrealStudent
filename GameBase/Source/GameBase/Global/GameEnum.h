@@ -6,7 +6,9 @@
 #include "UObject/NoExportTypes.h"
 #include "GameEnum.generated.h"
 
-
+/// <summary>
+/// Player 상체 상태
+/// </summary>
 UENUM(BlueprintType)
 enum class EUpAnimationState : uint8
 {
@@ -17,6 +19,9 @@ enum class EUpAnimationState : uint8
 	Max UMETA(DisplayName = "Max"),
 };
 
+/// <summary>
+/// Player 하체 상태
+/// </summary>
 UENUM(BlueprintType)
 enum class EDownAnimationState : uint8
 {
@@ -26,6 +31,9 @@ enum class EDownAnimationState : uint8
 	Max UMETA(DisplayName = "Max"),
 };
 
+/// <summary>
+/// Player 방향
+/// </summary>
 UENUM(BlueprintType)
 enum class EPlayerDir : uint8
 {
