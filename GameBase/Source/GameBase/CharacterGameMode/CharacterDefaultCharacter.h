@@ -15,6 +15,9 @@ public:
 	// Sets default values for this character's properties
 	ACharacterDefaultCharacter();
 
+	// Call Notify
+	virtual void AnimationEnd(FString _CurMontage);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

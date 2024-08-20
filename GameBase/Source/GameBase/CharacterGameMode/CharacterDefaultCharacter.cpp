@@ -15,6 +15,10 @@ ACharacterDefaultCharacter::ACharacterDefaultCharacter()
 	bUseControllerRotationYaw = true;
 }
 
+void ACharacterDefaultCharacter::AnimationEnd(FString _CurMontage)
+{
+}
+
 // Called when the game starts or when spawned
 void ACharacterDefaultCharacter::BeginPlay()
 {
