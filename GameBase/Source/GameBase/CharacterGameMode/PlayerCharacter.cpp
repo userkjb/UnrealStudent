@@ -4,6 +4,7 @@
 #include "CharacterGameMode/PlayerCharacter.h"
 
 #include "CharacterPlayerState.h"
+#include "Net/UnrealNetwork.h"
 
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
@@ -51,6 +52,9 @@ void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
+	DOREPLIFETIME(APlayerCharacter, IdleUpDown);
+	DOREPLIFETIME(APlayerCharacter, IdleUp);
+	DOREPLIFETIME(APlayerCharacter, IdleDown);
 }
 
 void APlayerCharacter::Tick(float DeltaTime)

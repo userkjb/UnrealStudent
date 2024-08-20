@@ -32,4 +32,12 @@ public :
 	UFUNCTION(Reliable, Server)
 	void InitPlayerState();
 	void InitPlayerState_Implementation();
+
+private :
+	UPROPERTY(Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	EPlayerUDAnimationState IdleUpDown = EPlayerUDAnimationState::None;
+	UPROPERTY(Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	EPlayerUpAnimationState IdleUp = EPlayerUpAnimationState::None;
+	UPROPERTY(Replicated, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	EPlayerDownAnimationState IdleDown = EPlayerDownAnimationState::None;
 };
