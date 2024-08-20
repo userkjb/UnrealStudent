@@ -74,4 +74,16 @@ private :
 	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	TMap<EPlayerUpAnimationState, class UAnimMontage*> AnimUpMontages = TMap<EPlayerUpAnimationState, class UAnimMontage*>();
+
+	/// <summary>
+	/// Player Down Montage
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
+	TMap<EPlayerDownAnimationState, class UAnimMontage*> AnimDownMontages = TMap<EPlayerDownAnimationState, class UAnimMontage*>();
+
+	/// <summary>
+	/// Player Animation Sequence
+	/// </summary>
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
+	TMap<EPlayerUDAnimationState, class UAnimSequence*> AnimUDSequences = TMap<EPlayerUDAnimationState, class UAnimSequence*>();
 };
