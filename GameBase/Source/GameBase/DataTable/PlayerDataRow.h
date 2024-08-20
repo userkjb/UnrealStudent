@@ -63,6 +63,9 @@ private :
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	int AttackSpeed = 1;
 
+	/// <summary>
+	/// Player Anim Instance
+	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
 	TSubclassOf<class UAnimInstance> PlayerAnimInstance;
 
