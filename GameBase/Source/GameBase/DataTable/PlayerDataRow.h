@@ -20,8 +20,20 @@ public :
 	FString PlayerName = "None";
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
-	int Hp = 10;
+	int Hp = -1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
-	int Mp = 10;
+	int Mp = -1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	int AttackDamage = -1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	int AbilityDamage = -1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	int MoveSpeed = 1;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources")
+	int AttackSpeed = 1;
 };
