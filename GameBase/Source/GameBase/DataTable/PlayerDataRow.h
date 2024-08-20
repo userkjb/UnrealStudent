@@ -73,5 +73,5 @@ private :
 	/// Player Up Montage
 	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Resources", meta = (AllowprivateAccess = "true"))
-	TMap<EUpAnimationState, class UAnimMontage*> AnimUpMontages = TMap<EUpAnimationState, class UAnimMontage*>();
+	TMap<EPlayerUpAnimationState, class UAnimMontage*> AnimUpMontages = TMap<EPlayerUpAnimationState, class UAnimMontage*>();
 };
