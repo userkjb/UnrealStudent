@@ -10,7 +10,7 @@ public class GameBase : ModuleRules
 
         PublicIncludePaths.Add(System.IO.Path.Combine(ModuleDirectory, ""));
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" , "EnhancedInput" });
+        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" , "EnhancedInput" , "Paper2D", "AIModule", "NavigationSystem", "UMG", "GameplayAbilityes" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
