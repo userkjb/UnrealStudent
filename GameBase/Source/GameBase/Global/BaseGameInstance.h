@@ -15,7 +15,13 @@ class GAMEBASE_API UBaseGameInstance : public UGameInstance
 	GENERATED_BODY()
 	
 public :
-	const struct FNetDataRow* GetNetData();
+
+	/// <summary>
+	/// NetDataTable 포인터를 받아오는 함수
+	/// </summary>
+	/// <param name="_Name">생성한 Net Data Table 행 이름</param>
+	/// <returns>FNetDataRow</returns>
+	const struct FNetDataRow* GetNetData(FName _Name);
 
 private :
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
