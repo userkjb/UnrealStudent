@@ -2,9 +2,23 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Engine/DataAsset.h"
 #include "InputDatas.generated.h"
+
+USTRUCT()
+struct FMyInputAction
+{
+	GENERATED_BODY()
+
+public :
+	UPROPERTY(EditDefaultsOnly)
+	FGameplayTag InputTag = FGameplayTag::EmptyTag;
+
+	UPROPERTY(EditDefaultsOnly)
+	TObjectPtr<class UInputAction> Actions = nullptr;
+};
+
 
 /**
  * 
@@ -18,9 +32,14 @@ public :
 	UInputDatas();
 	~UInputDatas();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	class UInputMappingContext* InputMappint;
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	//class UInputMappingContext* InputMappint;
+	UPROPERTY(EditDefaultsOnly)
+	TObjectPtr<class UInputMappingContext> InputMappint;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<class UInputAction*> Actions;
+
+	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	//TArray<class UInputAction*> Actions;
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FMyInputAction> Actions;
 };
