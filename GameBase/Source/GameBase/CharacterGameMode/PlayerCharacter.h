@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "CharacterGameMode/CharacterDefaultCharacter.h"
+#include "Global/GameEnum.h"
 #include "PlayerCharacter.generated.h"
 
 /**
